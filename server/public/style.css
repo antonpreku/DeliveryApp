@@ -1,0 +1,97 @@
+/* ---------------------Sign Up--------------------------- */
+#signUpForm {
+    padding: 2rem;
+    border:black solid 1px;
+    justify-content: space-around;
+}
+#signUpForm  > label{
+    display: grid;
+    flex-direction: column;
+    align-self: center;
+
+}
+
+/* ------------------- Log in--------------------------- */
+#logInForm {
+    border:black solid 1px;
+    justify-content: space-between;
+    display: grid;
+
+}
+
+/* ------------------- Nav Bar--------------------------- */
+.navBar {
+    padding: 1rem;
+    border:black solid 2px;
+    justify-content: space-around;
+    display: flex;
+    background-color: rgb(107, 146, 153);
+}
+.mainBarContainer{
+    display: flex;
+    justify-content: space-around;
+    width: 50rem;
+}
+.navBar > img{
+    height: 5rem;
+    width: 5rem;
+    background-color: rgba(128, 255, 0, 0.171);
+    border-radius: 50%;
+}
+.navBar > img:hover{
+    height: 7rem;
+    width: 7rem;
+    background-color: rgba(128, 255, 0, 0.171);
+    border-radius: 50%;
+}
+.businessBarContainer{
+    display: flex;
+    border-top: black solid 1px;
+    justify-content: space-around;
+}
+.profileBarContainer{
+    display: flex;
+    
+}
+.businessBarContainer > h3{
+padding-left: 2rem;
+}
+
+/* ------------------- Show Accounts --------------------------- */
+
+.showAccounts{
+  z-index: 3;
+  position: fixed;
+  top: 8rem;
+  left: 0.5rem;
+  /* width: 15rem; */
+  height: 30rem;
+  overflow: scroll;
+  background: rgb(231, 226, 221);
+  transition: all 0.3s linear;
+  display: flex;
+}
+.closeAccouts{
+  z-index: 3;
+  position: fixed;
+  top: 8rem;
+  left: -50rem;
+  transition: all 0.3s linear;
+  
+}
+.profileLogo{
+    height: 5rem;
+    width: 5rem;
+    background-color: rgba(128, 255, 0, 0.308);
+    border-radius: 50%;
+}
+
+.AccountMenu{
+    padding: 1rem;
+}
+.AccountList{
+    border-right: black solid 1px;
+    padding: 1rem;
+}
+
+/* ----------------Business Home Page--------------- */
