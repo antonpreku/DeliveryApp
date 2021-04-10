@@ -1,10 +1,8 @@
 import axios from 'axios';
-import { async } from 'validate.js';
 
 const ADD_NEW_BUSINESS = 'ADD_NEW_BUSINESS';
-const GET_ACCOUNT = 'GET_ACCOUNT';
-const REMOVE_ACCOUNT = 'REMOVE_ACCOUNT';
-const GET_ALL_PRODUCT = 'CREATE_NEW_PRODUCT';
+const GET_BUSINESS = 'GET_BUSINESS';
+const GET_ALL_PRODUCTS = 'CREATE_NEW_PRODUCTS';
 
 const initialState = {
     business: {},
@@ -24,30 +22,17 @@ export const createAccount = (data, userId) => {
         dispatch(_createAccount(res.data))
     }
 }
-const _getAccount = (business) => {
+export const _getBusiness = (business) => {
     return {
-        type: GET_ACCOUNT,
+        type: GET_BUSINESS,
         business
     }
 }
 
-export const getAccount = (id) => {
+export const getBusiness = (id) => {
     return async(dispatch) => {
         const res = await axios.get(`/api/business/${id}`)
-        dispatch(_getAccount(res.data))
-    }
-}
-
-export const _removeAccount = (business) => {
-    return {
-        type: REMOVE_ACCOUNT,
-        business
-    }
-}
-
-export const removeAccount = () => {
-    return async(dispatch) => {
-        dispatch(_removeAccount({}))
+        dispatch(_getBusiness(res.data))
     }
 }
 
@@ -61,7 +46,7 @@ export const createNewProduct = (data, businessId) =>{
 
 export const _getAllProducts = (products) =>{
     return {
-        type: GET_ALL_PRODUCT,
+        type: GET_ALL_PRODUCTS,
         products
     }
 }
@@ -76,9 +61,8 @@ export const getAllProducts = (businessId) =>{
 export default function businessReducer(state = initialState, action) {
     switch (action.type) {
         case ADD_NEW_BUSINESS: return {...state, business: action.business}
-        case GET_ACCOUNT: return {...state, business: action.business}
-        case REMOVE_ACCOUNT: return {...state, business: action.business}
-        case GET_ALL_PRODUCT: return { ...state, products: action.products}
+        case GET_BUSINESS: return {...state, business: action.business}
+        case GET_ALL_PRODUCTS: return { ...state, products: action.products}
 
         default: return state
     }

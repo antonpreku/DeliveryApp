@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import { HashRouter as Router, Route } from 'react-router-dom';
 import { connect } from 'react-redux'
 import {getUser} from '../redux/user'
+import {getBusiness} from '../redux/business'
 
 import HomePage from './HomePage'
 import NavBar from './navBar'
@@ -13,6 +14,7 @@ import AddNewProduct from './AddNewProduct'
 class App extends Component {
   async componentDidMount(){
     await this.props.getUser()
+    this.props.getBusiness(this.props.user.id)
   }
   render() {
     return (
@@ -37,6 +39,7 @@ export default connect(
     }
   },
   (dispatch) => {return {
-    getUser: () => dispatch(getUser())
+    getUser: () => dispatch(getUser()),
+    getBusiness: (id) => dispatch(getBusiness(id)),
   }}
   )(App)

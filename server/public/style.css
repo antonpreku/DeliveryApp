@@ -33,28 +33,33 @@
     width: 50rem;
 }
 .navBar > img{
-    height: 5rem;
-    width: 5rem;
+    height: 2rem;
+    width: 2rem;
     background-color: rgba(128, 255, 0, 0.171);
     border-radius: 50%;
 }
 .navBar > img:hover{
-    height: 7rem;
-    width: 7rem;
+    height: 3rem;
+    width: 3rem;
     background-color: rgba(128, 255, 0, 0.171);
     border-radius: 50%;
 }
 .businessBarContainer{
     display: flex;
-    border-top: black solid 1px;
     justify-content: space-around;
 }
 .profileBarContainer{
     display: flex;
-    
 }
 .businessBarContainer > h3{
 padding-left: 2rem;
+}
+
+.profileLogo{
+    height: 2rem;
+    width: 2rem;
+    background-color: rgba(128, 255, 0, 0.308);
+    border-radius: 50%;
 }
 
 /* ------------------- Show Accounts --------------------------- */
@@ -79,12 +84,6 @@ padding-left: 2rem;
   transition: all 0.3s linear;
   
 }
-.profileLogo{
-    height: 5rem;
-    width: 5rem;
-    background-color: rgba(128, 255, 0, 0.308);
-    border-radius: 50%;
-}
 
 .AccountMenu{
     padding: 1rem;
@@ -95,3 +94,11 @@ padding-left: 2rem;
 }
 
 /* ----------------Business Home Page--------------- */
+
+.BusinessMiniProfile {
+    border: black solid 1px;
+    height: 20rem;
+    width: 12rem;
+    z-index: 3;
+    position: fixed;
+}   

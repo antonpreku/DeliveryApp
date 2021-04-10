@@ -2,7 +2,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom';
-import { createNewProduct, getAccount } from '../redux/business'
+import { createNewProduct, getBusiness } from '../redux/business'
 
 class AddNewProduct extends Component{
     constructor(){
@@ -18,7 +18,7 @@ class AddNewProduct extends Component{
     }
 
     componentDidMount(){
-        this.props.getAccount(this.props.match.params.id)
+        this.props.getBusiness(this.props.match.params.id)
     }
 
     hundleChange(ev){
@@ -61,7 +61,7 @@ export default connect(
       }),
     (dispatch) => {
         return {
-            getAccount: (id) => dispatch(getAccount(id)),
+            getBusiness: (id) => dispatch(getBusiness(id)),
             createNewProduct : (data, ID) => dispatch(createNewProduct(data, ID))
         }
     }

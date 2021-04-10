@@ -23,11 +23,7 @@ class NewAccount extends Component{
 
   async handleNewAccount(ev){
     ev.preventDefault()
-    // console.log(this.props.user);
-    
     await this.props.createAccount(this.state, this.props.user.id)
-    // await this.props.getUser()
-
     await this.setState({
         name: '',
         phone: '',

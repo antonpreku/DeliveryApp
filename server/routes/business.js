@@ -1,6 +1,5 @@
 const router = require('express').Router()
 const { Business, Products} = require('../db');
-const { async } = require('validate.js');
 
 router.post('/newAccount',async (req, res, next) => {
     try{
@@ -32,7 +31,7 @@ router.post('/newProduct', async (req, res, next) => {
 
 router.get('/:id', async (req, res, next) => {
     try {
-        const data = await Business.findByPk(req.params.id)
+        const data = await Business.findOne( {where:{ userId : req.params.id}})
         res.send(data);
     }
     catch (err) {

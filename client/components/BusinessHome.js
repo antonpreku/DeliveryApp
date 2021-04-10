@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
-import { getAccount, getAllProducts} from '../redux/business'
+import {getAllProducts} from '../redux/business'
 
 
 
@@ -13,7 +13,6 @@ class BusinessHome extends Component {
         }
     }
     componentDidMount(){
-        this.props.getAccount(this.props.match.params.id)
         this.props.getAllProducts(this.props.match.params.id)
       }
     
@@ -22,10 +21,15 @@ class BusinessHome extends Component {
     return (
       <div>
         Welcome to Busimness home page 
-        <h3>{business.businessName}</h3>       
-        <h3>{business.type}</h3>       
-        <h3>{business.address}</h3>       
-        <h3>{business.phone}</h3>   
+        <div className='BusinessMiniProfile'>
+          <img alt="logo pic" />
+          <h3>{business.businessName}</h3>       
+          <h5>{business.type}</h5>       
+          <h5>{business.address}</h5>       
+          <h5>{business.phone}</h5>  
+          <hr/>
+        </div>
+        
         <div>
         {
           products.length?
@@ -48,7 +52,6 @@ export default connect(
  }),  
   (dispatch)=>{
     return {
-      getAccount: (id) => dispatch(getAccount(id)),
       getAllProducts: (id) => dispatch(getAllProducts(id))
     }
 })(BusinessHome);

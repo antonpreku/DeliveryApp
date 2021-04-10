@@ -1,12 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux'
-import { removeAccount } from '../redux/business'
 
 class HomePage extends React.Component {
-
-  componentDidMount(){
-    this.props.removeAccount()
-  }
 
   render() {
     return (
@@ -23,6 +18,5 @@ export default connect(
  }),  
   (dispatch)=>{
     return {
-      removeAccount: () => dispatch(removeAccount())
     }
 })(HomePage);
